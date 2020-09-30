@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeController">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Complexidade">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="141.0" layoutY="75.0" text="n:" />
+                        <Label layoutX="72.0" layoutY="119.0" text="Complexidade:" />
+                        <Label layoutX="72.0" layoutY="155.0" text="Processamento:" />
+                        <TextField fx:id="txtN" layoutX="184.0" layoutY="71.0" prefHeight="25.0" prefWidth="183.0" />
+                        <TextField fx:id="txtComplexidade" layoutX="184.0" layoutY="113.0" prefHeight="25.0" prefWidth="186.0" />
+                        <TextField fx:id="txtProcessamento" layoutX="183.0" layoutY="149.0" prefHeight="25.0" prefWidth="188.0" />
+                         <Button fx:id="btnVerificar" layoutX="395.0" layoutY="71.0" mnemonicParsing="false" onAction="#verificando" text="Verificar" />
+                        <Label fx:id="labelResultado" layoutX="184.0" layoutY="207.0" />
+                        <Label layoutX="395.0" layoutY="117.0" prefHeight="17.0" prefWidth="171.0" text="(Inserção ou Intercalação )" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Busca">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="43.0" layoutY="65.0" text="Conjunto de numeros: " />
+                        <Label layoutX="41.0" layoutY="108.0" text="Numero a ser buscado: " />
+                        <TextField fx:id="txtConjuntoDeNumerosBusca" layoutX="169.0" layoutY="61.0" prefHeight="25.0" prefWidth="188.0" />
+                        <TextField fx:id="txtnumeros" layoutX="169.0" layoutY="104.0" prefHeight="25.0" prefWidth="74.0" />
+                        <Label fx:id="labelResultadoBusca" layoutX="169.0" layoutY="169.0" text="Resultado" />
+                        <Button fx:id="btnBuscar" layoutX="169.0" layoutY="136.0" mnemonicParsing="false" onAction="#buscador" text="Busca" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Ordenação">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="txtConjuntoDeNumeros" layoutX="178.0" layoutY="80.0" />
+                        <Label layoutX="45.0" layoutY="84.0" text="Conjunto de numeros:" />
+                        <RadioButton fx:id="radioInsertion" layoutX="178.0" layoutY="123.0" mnemonicParsing="false" text="Insertion" />
+                        <RadioButton fx:id="radioBubble" layoutX="177.0" layoutY="140.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="65.0" text="Bubble" />
+                        <RadioButton fx:id="radioSelection" layoutX="177.0" layoutY="157.0" mnemonicParsing="false" text="Selection" />
+                        <Label fx:id="labelResultadoOrdenação" layoutX="184.0" layoutY="252.0" text="Resultado" />
+                        <Button fx:id="btnSelecionar" layoutX="327.0" layoutY="145.0" mnemonicParsing="false" onAction="#ordenar" text="Ordenar" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
