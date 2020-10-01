@@ -64,26 +64,32 @@ public class HomeController {
     void ordenar(ActionEvent event) {
 
         Ordenacao ordenacao = null;
+        String nome = " ";
 
         if (this.radioBubble.isSelected()){
 
             ordenacao = new Bubble();
+            nome = "Bubble Sort";
 
         }
         else if (this.radioInsertion.isSelected()){
 
             ordenacao = new Insertion();
+            nome = "Insertion Sort";
 
         }
         else if (this.radioSelection.isSelected()){
 
             ordenacao = new Selection();
-
+            nome = "Selection Sort";
         }
         else if(this.radioHeap.isSelected()){
 
             ordenacao = new Heap();
+            nome = "Heap Sort";
         }
+
+        //---------------------------------------------------------------------
 
         String[] vetorLetras = txtConjuntoDeNumeros.getText().split(",");
         int[] desordenado = new int[vetorLetras.length];
@@ -91,7 +97,18 @@ public class HomeController {
             desordenado[i] = Integer.parseInt(vetorLetras[i]);
         }
 
-        ordenacao.imprimir(desordenado);
+        int [] lista = ordenacao.imprimir(desordenado);
+
+        StringBuilder stringArray = new StringBuilder();
+
+        for (int n : lista ){
+            stringArray.append(n + " ");
+        }
+
+        //-----------------------------------------------------------------------
+
+
+        this.labelResultadoOrdenação.setText(stringArray.toString() + nome);
 
     }
 
