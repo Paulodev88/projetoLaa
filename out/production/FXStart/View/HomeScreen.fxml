@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeController">
@@ -37,7 +38,7 @@
                         <Label layoutX="41.0" layoutY="108.0" text="Numero a ser buscado: " />
                         <TextField fx:id="txtConjuntoDeNumerosBusca" layoutX="169.0" layoutY="61.0" prefHeight="25.0" prefWidth="188.0" />
                         <TextField fx:id="txtnumeros" layoutX="169.0" layoutY="104.0" prefHeight="25.0" prefWidth="74.0" />
-                        <Label fx:id="labelResultadoBusca" layoutX="169.0" layoutY="169.0" text="Resultado" />
+                        <Label fx:id="labelResultadoBusca" layoutX="169.0" layoutY="169.0" />
                         <Button fx:id="btnBuscar" layoutX="169.0" layoutY="136.0" mnemonicParsing="false" onAction="#buscador" text="Busca" />
                      </children>
                   </AnchorPane>
@@ -49,11 +50,19 @@
                      <children>
                         <TextField fx:id="txtConjuntoDeNumeros" layoutX="178.0" layoutY="80.0" />
                         <Label layoutX="45.0" layoutY="84.0" text="Conjunto de numeros:" />
-                        <RadioButton fx:id="radioInsertion" layoutX="178.0" layoutY="123.0" mnemonicParsing="false" text="Insertion" />
-                        <RadioButton fx:id="radioBubble" layoutX="177.0" layoutY="140.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="65.0" text="Bubble" />
-                        <RadioButton fx:id="radioSelection" layoutX="177.0" layoutY="157.0" mnemonicParsing="false" text="Selection" />
+                        <RadioButton fx:id="radioInsertion" layoutX="178.0" layoutY="123.0" mnemonicParsing="false" text="Insertion">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="sort" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="radioBubble" layoutX="177.0" layoutY="140.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="65.0" text="Bubble" toggleGroup="$sort" />
+                        <RadioButton fx:id="radioSelection" layoutX="177.0" layoutY="157.0" mnemonicParsing="false" text="Selection" toggleGroup="$sort" />
                         <Label fx:id="labelResultadoOrdenação" layoutX="184.0" layoutY="252.0" text="Resultado" />
                         <Button fx:id="btnSelecionar" layoutX="327.0" layoutY="145.0" mnemonicParsing="false" onAction="#ordenar" text="Ordenar" />
+                        <RadioButton fx:id="radioHeap" layoutX="176.0" layoutY="177.0" mnemonicParsing="false" text="Heap">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="sort1" />
+                           </toggleGroup>
+                        </RadioButton>
                      </children>
                   </AnchorPane>
                </content>

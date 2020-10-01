@@ -13,7 +13,7 @@ public class HomeScreen extends Application {
 
 
 
-        primaryStage.setTitle("LAA");
+        primaryStage.setTitle("Suite de Ordenação LAA");
 
         Parent fxmlMain = FXMLLoader.load(getClass().getResource("../View/HomeScreen.fxml"));
         Scene mainScene = new Scene(fxmlMain, 600, 400);

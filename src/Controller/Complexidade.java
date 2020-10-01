@@ -16,6 +16,10 @@ public class Complexidade {
         this.complexidade = complexidade;
     }
 
+    public String getComplexidade() {
+        return complexidade;
+    }
+
     public void setProcessamento(int processamento) {
         this.processamento = processamento;
     }

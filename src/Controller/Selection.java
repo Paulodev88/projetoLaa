@@ -1,12 +1,8 @@
 package Controller;
 
-public class Selection {
-
-    public void imprimir(){
-      System.out.println("Puxou");
-
-    }
-    public String Impressão(){
-        return "Texto";
+public class Selection extends Ordenacao {
+    @Override
+    public int[] imprimir(int[] numeros) {
+        return new int[0];
     }
 }

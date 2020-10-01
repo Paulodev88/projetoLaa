@@ -26,11 +26,6 @@ public class HomeController {
 
 
     @FXML
-    private Button btnVerificar;
-
-
-
-    @FXML
     private Label labelResultado;
 
 
@@ -39,9 +34,6 @@ public class HomeController {
 
     @FXML
     private TextField txtnumeros;
-
-    @FXML
-    private Button btnBuscar;
 
     @FXML
     private Label labelResultadoBusca;
@@ -59,6 +51,10 @@ public class HomeController {
     private RadioButton radioSelection;
 
     @FXML
+    private RadioButton radioHeap;
+
+
+    @FXML
     private Label labelResultadoOrdenação;
 
     @FXML
@@ -67,13 +63,36 @@ public class HomeController {
     @FXML
     void ordenar(ActionEvent event) {
 
-        System.out.println("Buttão partado");
-        Selection selection = new Selection();
-        selection.imprimir();
+        Ordenacao ordenacao = null;
 
-        String n = txtConjuntoDeNumeros.getText();
-        System.out.println(n);
-        labelResultadoOrdenação.setText(n);
+        if (this.radioBubble.isSelected()){
+
+            ordenacao = new Bubble();
+
+        }
+        else if (this.radioInsertion.isSelected()){
+
+            ordenacao = new Insertion();
+
+        }
+        else if (this.radioSelection.isSelected()){
+
+            ordenacao = new Selection();
+
+        }
+        else if(this.radioHeap.isSelected()){
+
+            ordenacao = new Heap();
+        }
+
+        String[] vetorLetras = txtConjuntoDeNumeros.getText().split(",");
+        int[] desordenado = new int[vetorLetras.length];
+        for (int i=0; i<vetorLetras.length; i++){
+            desordenado[i] = Integer.parseInt(vetorLetras[i]);
+        }
+
+        ordenacao.imprimir(desordenado);
+
     }
 
     @FXML
@@ -83,7 +102,7 @@ public class HomeController {
         complexidade.setN(Integer.parseInt(txtN.getText()));
         complexidade.setProcessamento(Integer.parseInt(txtProcessamento.getText()));
         complexidade.setComplexidade(txtComplexidade.getText().toLowerCase());
-        labelResultado.setText("O valor da complexidade escolhida foi " + complexidade.escolha() );
+        labelResultado.setText("O valor da complexidade " + complexidade.getComplexidade() +" foi " + complexidade.escolha() );
 
     }
 
