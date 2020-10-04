@@ -1,5 +1,7 @@
 package Controller;
 
+import Entities.Ordenacao;
+
 public class Selection extends Ordenacao {
     @Override
     public int[] imprimir(int[] numeros) {

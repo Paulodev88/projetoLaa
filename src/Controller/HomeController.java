@@ -1,5 +1,6 @@
 package Controller;
 
+import Entities.Ordenacao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -119,7 +120,7 @@ public class HomeController {
         complexidade.setN(Integer.parseInt(txtN.getText()));
         complexidade.setProcessamento(Integer.parseInt(txtProcessamento.getText()));
         complexidade.setComplexidade(txtComplexidade.getText().toLowerCase());
-        labelResultado.setText("O valor da complexidade " + complexidade.getComplexidade() +" foi " + complexidade.escolha() );
+        labelResultado.setText("O valor da complexidade " + complexidade.getComplexidade() +" em nanosegundos foi de " + complexidade.escolha());
 
     }
 

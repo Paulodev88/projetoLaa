@@ -1,5 +1,7 @@
 package Controller;
 
+import Entities.Ordenacao;
+
 public class Insertion extends Ordenacao {
 
 

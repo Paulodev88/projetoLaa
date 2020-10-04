@@ -1,6 +1,8 @@
 package Controller;
 
-public class Bubble extends Ordenacao{
+import Entities.Ordenacao;
+
+public class Bubble extends Ordenacao {
     @Override
     public int[] imprimir(int[] numeros) {
         return bubbleSort(numeros);

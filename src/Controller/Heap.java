@@ -1,7 +1,9 @@
 
 package Controller;
 
-public class Heap extends Ordenacao{
+import Entities.Ordenacao;
+
+public class Heap extends Ordenacao {
 
     @Override
     public int[] imprimir(int[] numeros) {

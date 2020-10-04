@@ -1,4 +1,4 @@
-package Controller;
+package Entities;
 
 public abstract class Ordenacao {
 
