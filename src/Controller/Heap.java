@@ -14,6 +14,28 @@ public class Heap extends Ordenacao {
 
     int temp;
 
+    private int[] heapSort(int[] vetor) {
+
+        int n = vetor.length;
+
+
+        for (int i = n / 2 - 1; i >= 0; i--)
+            heapify(vetor, n, i);
+
+
+        for (int i = n - 1; i > 0; i--) {
+
+            int temp = vetor[0];
+            vetor[0] = vetor[i];
+            vetor[i] = temp;
+
+
+            heapify(vetor, i, 0);
+
+        }
+        return vetor;
+
+    }
     private void heapify(int[] arr, int size, int i) {
 
         int largest = i;
@@ -33,28 +55,5 @@ public class Heap extends Ordenacao {
             arr[largest] = temp;
             heapify(arr, size, largest);
         }
-    }
-
-    private int[] heapSort(int[] vetor) {
-
-        int n = vetor.length;
-
-        // Build heap (rearrange array)
-        for (int i = n / 2 - 1; i >= 0; i--)
-            heapify(vetor, n, i);
-
-        // One by one extract an element from heap
-        for (int i = n - 1; i > 0; i--) {
-            // Move current root to end
-            int temp = vetor[0];
-            vetor[0] = vetor[i];
-            vetor[i] = temp;
-
-            // call max heapify on the reduced heap
-            heapify(vetor, i, 0);
-
-        }
-        return vetor;
-
     }
 }
